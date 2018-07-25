@@ -1,0 +1,34 @@
+drop database eventDB;
+create database eventDB;
+use eventDB;
+create  table admin
+(
+ id int (10) primary key auto_increment,
+ username varchar(255),
+email varchar(255),
+password varchar(255)
+
+);
+create table event
+(
+eventid int(50) primary key auto_increment,
+eventname varchar(100),
+eventlocation varchar(100),
+eventvenue varchar(500),
+eventfromdate varchar(50),
+eventtodate varchar(50),
+eventfromtime varchar(100),
+eventtotime varchar(100),
+eventstatus varchar(100)
+);
+create table member
+(
+memberrecordid int(50) primary key auto_increment,
+eventid varchar(50) references event(eventid),
+firstname varchar(100),
+lastname varchar(100),
+mobilenumber varchar(500),
+email varchar(100),
+organization varchar(500),
+designation varchar(100)
+);
